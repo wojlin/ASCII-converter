@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <title>ASCII</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/css/style.css">
+    <script src="static/js/jquery-3.6.0.min.js"></script>
+  </head>
+<body>
+<div class="ascii-box" id="main_box">
+  <h2>IMAGE TO ASCII CONVERTER</h2>
+
+  <h3>Options:</h3>
+  <div class="input_container">
+    <label class="description" for="columns_amount">columns amount: </label>
+    <input class="number_input" id="columns_amount" type="number" min="10" value="80" max="200"><br/>
+    <label class="tooltip" for="columns_amount">(number of columns in converted ASCII)</label>
+  </div>
+  <div class="input_container">
+    <label class="description" for="shading_amount">shading amount: </label>
+    <input class="number_input" id="shading_amount" type="number" min="2" value="10" max="20"><br/>
+    <label class="tooltip" for="shading_amount">(color lever grading less=higher contrast   more=better shading)</label>
+  </div>
+  <div class="input_container">
+    <label class="description" for="contrast_amount">contrast: </label>
+    <input class="number_input" id="contrast_amount" type="number" min="-100" value="0" max="100"><span class="description"> %</span><br/>
+    <label class="tooltip" for="contrast_amount">(contrast of image higher = sharp image)</label>
+  </div>
+  <div class="input_container">
+    <label class="description" for="use_colors">use colors: </label>
+    <span class="description">[</span><input id="use_colors" type="checkbox"><span class="description">]</span><br/>
+    <label class="tooltip" for="use_colors">(default: black = whitespace, white = ASCII)</label>
+  </div>
+  <div class="input_container">
+    <label class="description" for="invert_colors">invert colors: </label>
+    <span class="description">[</span><input id="invert_colors" type="checkbox"><span class="description">]</span><br/>
+    <label class="tooltip" for="invert_colors">(default: black = whitespace, white = ASCII)</label>
+  </div>
+
+
+
+
+
+  <input id="choose" type="file" onchange="previewFile()">
+  <div id="image_holder">
+    <img id="preview_image" src="" alt="Image preview...">
+  </div>
+  <button id="convert_button" onclick="convert_core();">CONVERT</button>
+
+</div>
+
+<div class="ascii-box" id="output_box">
+  <textarea style="font-size:1.7vw;resize: none;font-family: 'Courier New', monospace;" id="output_textarea" name="output_textarea" rows="4" cols="80">
+  </textarea>
+</div>
+
+<div id="cursor">▒</div>
+
+<script src="static/js/mouse.js"></script>
+<script src="static/js/convert.js"></script>
+</body>
+</html>
